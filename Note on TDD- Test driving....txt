@@ -1,0 +1,75 @@
+if it's an Object oriented program (oop ) for calculation ->...
+
+A method.
+declare a main method without static cause it's not returning anything	
+(public void testThatCalculatorCanAddTwoPositiveNumber (){} )
+_____________________________________________________________________	
+
+
+A function.--- it's returning something. 
+public static boolean even ( int userInput )
+_____________________________________________________________________
+
+
+1. gives the junit compiler access to the test class
+
+Jad compiler.
+2. it's job is to check if it's a test
+
+i.e always import your test class from junit jupuiter api in your tdd code with -(import org.junit.jupiter.api.Test; ).
+_____________________________________________________________________
+
+To compile on git bash.
+javac -cp "Junit-platform-console-standalone-1.10.2.jar" "class name"
+
+AFTER COMPILING;
+java -jar junit-platform-console-standalone-1.10.2.jar --class-path . --scan-class-path --include-classname CalculatorTest
+
+
+_____________________________________________________________________
+
+// given---- what you need to have in place to verify what you have in place (giving that i have a calculator ) 
+
+// when----- when i call the add button on my calculator( is the add functionality of the calculator )
+
+// assert---- assert it once and end. ( where you do the verification to give the 'result' ).
+
+_____________________________________________________________________
+
+instantiation
+
+every class you create in java has an 'constructor' ( to instantiate the object of the class )
+*IMPORTANT OF CONSTRUCTOR IS TO CREATE AN OBJECT*
+
+- A constructor does not return anything i.e there is no static.
+- Every class you create has a constructor
+
+	public class CalculatorTest{
+			|
+		       \ / ( java create the object of the class without args (argument) )
+		public CalculatorTest (){
+
+		}
+
+}
+______________________________________________________________________
+
+to open a notepad on git bash...
+
+ nano class name;
+
+______________________________________________________________________
+@Test
+import static org.junit.jupiter.api.Assertion.assertThrows
+public void testDivideByZero {
+
+	//given
+	Calculator calculator = new Calculator();
+
+
+assertThrows ( RuntimeExpression.class,()->calculator.divide(4,0) );
+
+RuntimeException exception = new RuntimeException ("Error!");
+throw exception;
+
+}
